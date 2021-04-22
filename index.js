@@ -4,9 +4,11 @@ const port =  process.env.PORT
 
 const cors = require("cors")
 
-app.use(cors())
+app.use(cors({
+     origin:"hola.com"
+}))
 
-app.all("*", (req, res) => {
+app.get("*", (req, res) => {
   res.send("Hello World!")
 })
 
